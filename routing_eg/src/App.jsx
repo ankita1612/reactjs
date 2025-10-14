@@ -3,9 +3,16 @@ import routes from "./routes_seprate_file";
 import Nested_1 from "./pages/Nested_1";
 import Nested_2 from "./pages/Nested_2";
 import Parent_1 from "./pages/Parent_1";
-
+import ErrorBoundriesEg from "./pages/ErrorBoundriesEg";
+import ErrorBoundary from "./components/ErrorBoundary";
+import { useState } from "react";
 function App() {
   return (
+    <div>
+      <Counter/>
+      {/* <ErrorBoundary>
+        <ErrorBoundriesEg />
+    </ErrorBoundary> */}
     <Router>
       <nav>
         <Link to="/">Home</Link> |{" "}
@@ -28,7 +35,16 @@ function App() {
       </Routes>
 
     </Router>
+    </div>
   );
 }
-
+function Counter() {
+  const [cntr,setCntr]=useState(1);
+  return 
+    <>
+    <h1>Counter {cntr}</h1>;
+    <h1><button onClick={()=>setCntr(cntr+1)} >Add</button> </h1>;
+    <hr></hr>
+    </>
+}  
 export default App;
