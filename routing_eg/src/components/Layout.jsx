@@ -6,10 +6,11 @@ function Layout() {
   return (
     <div>
       <Header />
+      
       <main style={{ minHeight: "70vh", padding: "1rem" }}>
-        <Outlet /> {/* This renders the page content */}
+       
       </main>
-      <Footer />
+      <Footer /><Outlet /> {/* This renders the page content */}
     </div>
   );
 }
